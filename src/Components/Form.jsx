@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 
-const Form = ({handle_add_obj}) => {
+const Form = ({ handle_add_obj }) => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   const [des, setdes] = useState("");
   const [quantity, setquantity] = useState(1);
-  
- 
- 
-  
+
   const handlesubmit = (e) => {
     e.preventDefault();
+
     if (!des) return;
-    const new_obj = { id: Date.now(), des, quantity, packed: false };
-    handle_add_obj(new_obj)
     
+    const new_obj = { id: Date.now(), des, quantity, packed: false };
+    handle_add_obj(new_obj);
+
     setdes("");
     setquantity(1);
   };
